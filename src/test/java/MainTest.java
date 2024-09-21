@@ -24,6 +24,10 @@ public class MainTest {
         //Тест myOverload()
         Assertions.assertEquals(myOverload("VV"), "VV_VV_VV");
         Assertions.assertEquals(printArr(myOverload(new int[]{1, 1, 9, 0})),  printArr( new int[]{1, 1, 81, 0}));
+        //Тест findFact()
+        Assertions.assertEquals(findNatNum(10), 11);
+        Assertions.assertEquals(findNatNum(40), 41);
+        Assertions.assertEquals(findNatNum(98), 101);
 
     }
     public static String printArr(int[] m){
