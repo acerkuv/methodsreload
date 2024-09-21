@@ -24,6 +24,7 @@ public class MainTest {
         //Тест myOverload()
         Assertions.assertEquals(myOverload("VV"), "VV_VV_VV");
         Assertions.assertEquals(printArr(myOverload(new int[]{1, 1, 9, 0})),  printArr( new int[]{1, 1, 81, 0}));
+
     }
     public static String printArr(int[] m){
         return Arrays.toString(m);
