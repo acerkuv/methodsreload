@@ -3,11 +3,12 @@ package org.example;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Arrays;
+import java.util.*;
 
 import static java.lang.System.*;
 
 public class Main {
+    static List <Integer> list = new ArrayList<>();
     public static void main(String[] args) {
         int num = 198765;
         out.println("Сумма цифр чила " + num + " = "+ sum(num));
@@ -15,6 +16,9 @@ public class Main {
         out.println("Факториал числа " + 5 + " = " + fact(5));
         out.println("Вывод строк через '_' " + myOverload("Hello"));
         out.println("Вывод массива с возведенными в квадрат значениями" + Arrays.toString( myOverload(new int[]{1,4,9})));
+        int nat = 60;
+        out.println("Натуральные числа от 10 до " + findNearNatNum(nat));
+
     }
     //Вывод суммы цифр числа
     public static int sum(int i){
@@ -56,5 +60,17 @@ public class Main {
         }
         return t;
     }
+    // Пjиск натуральных чисел от 10 до n c рекурсией
+    public static List<Integer> findNearNatNum(int n){
+        boolean odd = (n % 2) !=0;
+        boolean notNat = (n % 3) ==0 | (n % 5) ==0 | (n % 7) ==0;
+        if(n > 10) {
+            if (odd & !notNat) Main.list.add(n);
+            findNearNatNum(n -1);
+        }
+        return Main.list;
+    }
+
+
 
 }
